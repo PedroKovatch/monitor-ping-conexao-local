@@ -28,7 +28,7 @@ MonitorPing/
 | `main.py` | Iniciar o programa e organizar a execução principal. |
 | `interface.py` | Criar a interface gráfica usando Tkinter. |
 | `monitoramento.py` | Realizar o ping dos endereços IP e retornar o status de conectividade. |
-| `dados.py` | Ler e salvar as filiais cadastradas no arquivo JSON. |
+| `dados.py` | Ler e salvar as filiais e seus equipamentos cadastrados no arquivo JSON. |
 | `filiais.json` | Armazenar localmente os dados reais das filiais. Esse arquivo não será enviado ao GitHub. |
 | `filiais.exemplo.json` | Apresentar um exemplo de estrutura de dados sem utilizar IPs reais. |
 
@@ -48,3 +48,31 @@ flowchart TD
 A estrutura foi mantida pequena porque a primeira versão será uma aplicação local em Python.
 
 Caso o projeto cresça no futuro, será possível adicionar novos arquivos e funcionalidades sem precisar reescrever toda a aplicação.
+
+## 6. Modelo de dados
+
+Cada filial será registrada com seu nome e uma lista de equipamentos monitorados. Cada equipamento terá um nome de identificação e um endereço IP.
+
+```json
+[
+  {
+    "nome": "Filial Exemplo",
+    "equipamentos": [
+      {
+        "nome": "Roteador principal",
+        "ip": "192.0.2.10"
+      },
+      {
+        "nome": "Link de internet",
+        "ip": "192.0.2.11"
+      }
+    ]
+  }
+]
+```
+
+Essa estrutura permite monitorar mais de um endereço IP por filial, mantendo a identificação de cada equipamento.
+
+O status de conectividade será associado individualmente a cada equipamento. Na interface, cada equipamento poderá aparecer em uma linha com filial, nome, IP e indicador de status.
+
+O arquivo `filiais.json` conterá os dados reais apenas na máquina local e continuará ignorado pelo Git. O arquivo `filiais.exemplo.json` servirá como modelo público e seguro no repositório.

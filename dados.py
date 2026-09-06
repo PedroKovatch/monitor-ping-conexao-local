@@ -33,5 +33,38 @@ def salvar_filiais(filiais):
     with ARQUIVO_FILIAIS.open("w", encoding="utf-8") as arquivo:
         json.dump(filiais, arquivo, ensure_ascii=False, indent=4)
 
+def adicionar_filial(nome):
+    """
+    Adiciona uma nova filial ao arquivo local.
+
+    Parâmetro:
+        nome (str): nome da filial que será cadastrada.
+
+    Retorno:
+        bool: True se a filial foi adicionada; False se o nome estiver vazio
+        ou já existir uma filial com o mesmo nome.
+    """
+    # Remove espaços no início e no fim do nome informado.
+    nome = nome.strip()
+
+    # Não permite o cadastro de uma filial sem nome.
+    if not nome:
+        return False
+
+    filiais = carregar_filiais()
+
+    # Compara os nomes sem diferenciar letras maiúsculas e minúsculas.
+    if any(filial["nome"].casefold() == nome.casefold() for filial in filiais):
+        return False
+
+    # Uma filial nova começa sem equipamentos cadastrados.
+    filiais.append({
+        "nome": nome,
+        "equipamentos": []
+    })
+
+    salvar_filiais(filiais)
+    return True
+    
 
     

@@ -3,7 +3,7 @@
 ## 1. Identificação
 
 - **Projeto:** Monitor de Conexão Local
-- **Versão do documento:** 1.1
+- **Versão do documento:** 1.2
 - **Data:** 04/09/2026
 - **Responsável:** Pedro Kovatch
 - **Status:** Em elaboração
@@ -23,8 +23,8 @@ O sistema Monitor de Conexão Local será uma aplicação desktop desenvolvida e
 | RF03 | O sistema deve armazenar os dados cadastrados localmente, para que permaneçam disponíveis quando o programa for aberto novamente. |
 | RF04 | O sistema deve exibir uma lista vertical das filiais, equipamentos e respectivos endereços IP cadastrados. |
 | RF05 | O sistema deve realizar verificações automáticas de ping nos endereços IP cadastrados enquanto estiver aberto. |
-| RF06 | O sistema deve indicar o status de conectividade com uma bolinha verde quando o endereço IP responder ao ping. |
-| RF07 | O sistema deve indicar o status de conectividade com uma bolinha vermelha quando o endereço IP não responder ao ping. |
+| RF06 | O sistema deve indicar o status de conectividade com um indicador visual verde quando o endereço IP responder ao ping. |
+| RF07 | O sistema deve indicar o status de conectividade com um indicador visual vermelho quando o endereço IP não responder ao ping. |
 
 ## 4. Requisitos não funcionais
 
@@ -41,16 +41,16 @@ O sistema Monitor de Conexão Local será uma aplicação desktop desenvolvida e
 
 A primeira versão do Monitor de Conexão Local terá como foco o cadastro local de filiais e equipamentos, além do monitoramento visual automático da resposta de ping dos respectivos endereços IP.
 
-Funcionalidades previstas nesta versão:
+### 5.1 Funcionalidades previstas
 
 - Cadastro manual de filiais.
-- Cadastro manual de um ou mais equipamentos por filial.
+- Cadastro Cadastro manual de um ou mais equipamentos por filial.
 - Armazenamento local dos dados em arquivo JSON.
 - Listagem das filiais, equipamentos e endereços IP cadastrados.
 - Atualização automática do status de ping.
 - Indicador visual verde para resposta e vermelho para erro.
 
-Funcionalidades fora do escopo desta versão:
+### 5.2 Funcionalidades fora do escopo
 
 - Banco de dados.
 - Sistema web.
@@ -70,12 +70,14 @@ Funcionalidades fora do escopo desta versão:
 | RB05 | O monitoramento deve continuar sendo executado enquanto o programa estiver aberto. |
 | RB06 | Os dados cadastrados devem ser carregados automaticamente ao iniciar o programa. |
 | RB07 | Uma filial pode possuir um ou mais equipamentos monitorados. |
+| RB08 | O sistema não deve permitir o cadastro de duas filiais com o mesmo nome, sem diferenciar letras maiúsculas e minúsculas. |
 
 ## 7. Critérios de aceitação
 
 A primeira versão será considerada aceita quando:
 
 - For possível cadastrar uma filial.
+- Não for possível cadastrar uma segunda filial com o mesmo nome.
 - For possível cadastrar um ou mais equipamentos com nome e endereço IP para cada filial.
 - Os dados cadastrados continuarem disponíveis após fechar e abrir o programa.
 - A lista de filiais, equipamentos e IPs for exibida na interface.

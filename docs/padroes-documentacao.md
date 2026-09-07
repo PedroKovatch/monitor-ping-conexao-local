@@ -137,13 +137,16 @@ Não devem ser adicionados trechos isolados sem considerar a estrutura atual do 
 ## 6. Termos padronizados do projeto
 
 - **Filial:** unidade da empresa cadastrada no sistema.
-- **Equipamento:** dispositivo ou ponto de conectividade monitorado dentro de uma filial.
-- **Endereço IP:** identificação de rede associada a um equipamento.
-- **Status de conectividade:** resultado do ping de cada equipamento.
-- **Online:** equipamento cujo endereço IP respondeu ao ping.
-- **Indisponível:** equipamento cujo endereço IP não respondeu ao ping.
+- **Roteador:** equipamento monitorado de uma filial.
+- **Endereço IP:** endereço utilizado pelo sistema para testar a conectividade do roteador.
+- **Status de conectividade:** resultado da última verificação de ping do roteador.
+- **Aguardando:** estado inicial, antes de existir um resultado de ping.
+- **Online:** roteador cujo endereço IP respondeu ao ping.
+- **Indisponível:** roteador cujo endereço IP não respondeu ao ping.
 
-Uma filial pode possuir um ou mais equipamentos. O status é associado ao equipamento e ao seu endereço IP, não à filial de forma genérica.
+Na primeira versão, cada filial possui um único roteador cadastrado, identificado por um endereço IP.
+
+O status exibido corresponde à resposta de ping desse roteador. Ele não comprova, isoladamente, o funcionamento da internet ou de todos os serviços da filial.
 
 ## 7. Revisão contínua
 

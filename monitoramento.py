@@ -1,4 +1,4 @@
-import subprocess # Permite executar comandos do Windows pelo Python.
+import subprocess  # Permite executar comandos do Windows pelo Python.
 
 
 def testar_ping(ip):
@@ -14,10 +14,10 @@ def testar_ping(ip):
     # Executa um ping no Windows, aguardando no máximo 1 segundo.
     resultado = subprocess.run(
         ["ping", "-n", "1", "-w", "1000", ip],
-        capture_output=True, # Guarda o texto retornado pelo comando.
+        capture_output=True,  # Guarda o texto retornado pelo comando.
         text=True
     )
-    # O código 0 indica que o comando foi executado com sucesso.
+    # O código 0 indica que o endereço IP respondeu ao ping.
     return resultado.returncode == 0
 
 

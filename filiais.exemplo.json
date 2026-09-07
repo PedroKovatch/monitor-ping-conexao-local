@@ -1,15 +1,6 @@
 [
   {
     "nome": "Filial Exemplo",
-    "equipamentos": [
-      {
-        "nome": "Roteador principal",
-        "ip": "192.0.2.10"
-      },
-      {
-        "nome": "Link de internet",
-        "ip": "192.0.2.11"
-      }
-    ]
+    "ip": "192.0.2.10"
   }
 ]

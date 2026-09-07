@@ -15,12 +15,20 @@ Esse modelo é adequado ao projeto porque o sistema possui funcionalidades que p
 | Incremento | Entrega | Objetivo |
 |---|---|---|
 | 1 | Verificação de ping | Criar e testar a lógica de ping para um endereço IP. |
-| 2 | Cadastro e armazenamento local | Permitir cadastrar filiais e salvar os dados em arquivo JSON. |
-| 3 | Interface de monitoramento | Exibir as filiais em lista e indicar o status com as cores verde e vermelha. |
-| 4 | Atualização automática e testes | Atualizar os status periodicamente, validar os requisitos e registrar os testes. |
+| 2 | Cadastro e armazenamento local | Permitir cadastrar, editar e excluir filiais com nome e IP de um único roteador, mantendo os dados em JSON local. |
+| 3 | Interface de monitoramento | Disponibilizar as ações de cadastro na interface e exibir uma lista com filial, IP e indicadores de aguardando, online e indisponível. |
+| 4 | Atualização automática e testes | Implementar atualização manual e automática com agendamento a cada 10 segundos, impedir rodadas simultâneas, exibir o horário da última atualização e validar os requisitos. |
+
+As funcionalidades dos quatro incrementos já possuem implementação, com testes básicos registrados em `testes.md`. A entrega permanece em revisão, com validações pendentes antes de ser considerada concluída.
 
 ## 4. Forma de trabalho
 
-Cada incremento será desenvolvido, testado e documentado antes do início do próximo.
+O desenvolvimento será realizado em etapas pequenas, com revisão do código e testes a cada alteração funcional.
 
-Ao finalizar um incremento, as alterações serão registradas em um commit no Git e enviadas ao GitHub.
+A documentação será revisada em conjuntos coerentes de mudanças, seguindo `padroes-documentacao.md` e preservando a estrutura de cada arquivo.
+
+Os resultados confirmados e as validações pendentes serão registrados em `testes.md`. Uma funcionalidade implementada não será considerada plenamente validada apenas por executar sem erro de sintaxe.
+
+Os commits serão realizados após a revisão de um conjunto funcional de alterações. Não será necessário criar um commit para cada pequeno ajuste de código ou documentação.
+
+Antes de enviar as alterações ao GitHub, serão conferidos os arquivos incluídos no commit, garantindo que os dados reais de `filiais.json` permaneçam fora do repositório.
